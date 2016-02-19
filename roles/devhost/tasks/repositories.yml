@@ -1,0 +1,33 @@
+---
+- name: add Cisco repo to Centos7 hosts
+  sudo: yes
+  copy:
+    src: ../files/ciscentos7.repo
+    dest: /etc/yum.repos.d/ciscentos7.repo
+
+- name: import gpg-keys
+  sudo: yes
+  command: rpm --import "{{ item }}"
+  with_items: 
+      - http://apt.sw.be/RPM-GPG-KEY.dag.txt
+      - http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+  ignore_errors: True
+
+- name: Download EPEL Repo - Centos/RHEL 7
+  get_url: url=http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm dest=/tmp/epel-release-7-5.noarch.rpm
+
+- name: Install EPEL Repo - Centos/RHEL 7
+  sudo: yes
+  yum: pkg=/tmp/epel-release-7-5.noarch.rpm state=present  
+
+- name: Download RPMFORGE Repo - Centos/RHEL 7
+  get_url: url=http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm dest=/tmp/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+
+- name: Install RPMFORGE Repo - Centos/RHEL 7
+  sudo: yes
+  yum: pkg=/tmp/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm state=present
+
+- name: Download and install Apache-maven Repo - Centos/RHEL 7
+  sudo: yes
+  get_url: url=http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo dest=/etc/yum.repos.d/epel-apache-maven.repo
+

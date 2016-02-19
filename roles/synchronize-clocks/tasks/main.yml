@@ -1,0 +1,7 @@
+---
+# tasks file for synchronize-clocks
+- name: Install ntpd
+  yum: name=ntp state=latest
+
+- name: Start end enable ntpd
+  service: name=ntpd enabled=yes state=restarted

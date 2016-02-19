@@ -1,0 +1,7 @@
+---
+- name: install 'GNOME desktop' environment group
+  sudo: yes
+  yum:
+    name: "@GNOME Desktop"
+    update_cache: yes
+    state: latest

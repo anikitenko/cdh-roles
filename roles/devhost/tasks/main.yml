@@ -1,0 +1,15 @@
+---
+- name: assert platform is supported
+  assert:
+    that:
+      - ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+# Fixing repositories
+- include: repositories.yml
+  sudo: yes
+  tags: repositories
+
+# Installing packages
+- include: packages.yml
+  tags: packages
+

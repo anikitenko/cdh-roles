@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+    - update-hosts
+    - disable_swappiness
+    - transparent_hugepage
+    - disable-iptables
+    - disable-selinux

@@ -1,0 +1,8 @@
+---
+  - name: Turn off redhat transparent hugepage runtime
+    shell: echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag
+#    when: ansible_distribution  == "RedHat"
+
+  - name: Turn off redhat transparent hugepage permanent
+    lineinfile: dest=/etc/rc.d/rc.local regexp='^.*transparent_hugepage.*$' line='echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag'
+#    when: ansible_distribution  == "RedHat"

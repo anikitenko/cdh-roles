@@ -1,0 +1,8 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+    - synchronize-clocks
+    - setup-java
+    - hadoop-swift
+#    - install-sparkR

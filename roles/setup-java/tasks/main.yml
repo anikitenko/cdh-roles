@@ -1,0 +1,32 @@
+---
+# tasks file for setup-java
+- name: Install alternatives java
+  command: 'alternatives --install /usr/bin/java java /usr/java/jdk1.7.0_67-cloudera/bin/java 1'
+
+- name: Install alternatives javac
+  command: 'alternatives --install /usr/bin/javac javac /usr/java/jdk1.7.0_67-cloudera/bin/javac 1'
+
+- name: Install alternatives jar
+  command: 'alternatives --install /usr/bin/jar jar /usr/java/jdk1.7.0_67-cloudera/bin/jar 1'
+
+- name: Set alternatives java
+  command: 'alternatives --set java /usr/java/jdk1.7.0_67-cloudera/bin/java'
+
+- name: Set alternatives javac
+  command: 'alternatives --set javac /usr/java/jdk1.7.0_67-cloudera/bin/javac'
+
+- name: Set alternatives jar
+  command: 'alternatives --set jar /usr/java/jdk1.7.0_67-cloudera/bin/jar'
+
+- name: Remove old /etc/profile.d/java.sh
+  file: path=/etc/profile.d/java.sh state=absent
+
+- name: Copying new /etc/profile.d/java.sh
+  copy:
+    src: ../files/java.sh
+    dest: /etc/profile.d/java.sh 
+    mode: 0644
+
+- name: Create link
+  file: src=/usr/java/jdk1.7.0_67-cloudera dest=/usr/java/jdk state=link
+

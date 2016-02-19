@@ -1,0 +1,14 @@
+---
+# tasks file for disable-iptables
+
+- name: open ports
+  shell: "/etc/init.d/iptables save"
+
+- name: Shut down iptables
+  service:
+    name: iptables
+    state: stopped
+
+- name: Switch iptables off
+  shell: "chkconfig iptables off"
+

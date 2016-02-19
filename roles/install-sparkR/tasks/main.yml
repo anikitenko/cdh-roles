@@ -1,0 +1,32 @@
+---
+# tasks file
+- name: Install R
+  yum: name=R state=latest
+
+- name: Check if unzip is installed
+  yum: name=unzip state=present
+
+- name: Remove old R directory if exists
+  file: path=/opt/cloudera/parcels/CDH/lib/spark/R state=absent
+
+- name: Copy SparkR directory (to be deleted!111)
+  unarchive: src=../files/sparkR.zip dest=/opt/cloudera/parcels/CDH/lib/spark mode=0755 owner=root group=root
+
+#- name: Create CDH/lib/spark/R/lib directory
+#  file: path=/opt/cloudera/parcels/CDH/lib/spark/R/lib state=directory mode=0755 owner=root group=root
+
+- name: Copy sparkr.zip (packaged with install-dev.sh)
+  copy: src=../files/sparkr.zip dest=/opt/cloudera/parcels/CDH/lib/spark/R/lib/sparkr.zip mode=0777
+
+#- name: Unzip sparkr.zip archive 
+#  unarchive: src=/opt/cloudera/parcels/CDH/lib/spark/R/lib/sparkr.zip dest=/opt/cloudera/parcels/CDH/lib/spark/R/lib copy=no
+
+- name: Copy sparkR shell
+  copy: src=../files/sparkR-to-lib dest=/opt/cloudera/parcels/CDH/lib/spark/bin/sparkR owner=root group=root mode=0655
+
+- name: Copy sparkR shell to bin
+  copy: src=../files/sparkR-to-bin dest=/opt/cloudera/parcels/CDH/bin/sparkR owner=root group=root mode=0655
+
+- name: Set alternatives sparkR
+  command: 'alternatives --install /usr/bin/sparkR sparkR /opt/cloudera/parcels/CDH/bin/sparkR 1'
+

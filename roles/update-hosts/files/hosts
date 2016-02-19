@@ -1,0 +1,36 @@
+127.0.0.1       localhost.localdomain   localhost
+10.100.0.39 cdh-worker-04.cisco.com cdh-worker-04
+10.100.0.41 cdh-worker-03.cisco.com cdh-worker-03
+10.100.0.38 cdh-worker-02.cisco.com cdh-worker-02
+10.100.0.43 cdh-worker-01.cisco.com cdh-worker-01
+10.100.0.42 cdh-worker-06.cisco.com cdh-worker-06
+10.100.0.44 cdh-worker-05.cisco.com cdh-worker-05
+10.100.0.46 cdh-master-02.cisco.com cdh-master-02
+10.100.0.45 cdh-master-01.cisco.com cdh-master-01
+10.100.0.52 cdh-master-03.cisco.com cdh-master-03
+10.100.0.57 cdh-worker-07.cisco.com cdh-worker-07
+10.100.0.60 cdh-worker-08.cisco.com cdh-worker-08
+10.100.0.61 cdh-worker-09.cisco.com cdh-worker-09
+10.100.0.63 cdh-worker-10.cisco.com cdh-worker-10
+10.100.0.73 cdh-worker-11.cisco.com cdh-worker-11
+10.100.0.74 cdh-worker-12.cisco.com cdh-worker-12
+10.100.0.75 cdh-worker-13.cisco.com cdh-worker-13
+10.100.0.76 cdh-worker-14.cisco.com cdh-worker-14
+10.100.0.77 cdh-worker-15.cisco.com cdh-worker-15
+10.100.0.80 cdh-worker-16.cisco.com cdh-worker-16
+10.100.0.81 cdh-worker-17.cisco.com cdh-worker-17
+10.100.0.83 cdh-worker-18.cisco.com cdh-worker-18
+10.100.0.84 cdh-worker-19.cisco.com cdh-worker-19
+10.100.0.85 cdh-worker-20.cisco.com cdh-worker-20
+10.100.0.40 cdh-edge-01.cisco.com cdh-edge-01
+10.100.0.47 devhost.cisco.com devhost
+
+# Shipped analytics
+128.107.15.5    shipped-analytics-hs-central-dcos-slave-01        shipped-analytics-hs-central-dcos-slave-01.novalocal
+128.107.15.50   shipped-analytics-hs-central-dcos-slave-02              shipped-analytics-hs-central-dcos-slave-02.novalocal
+128.107.15.51   shipped-analytics-hs-central-dcos-slave-03              shipped-analytics-hs-central-dcos-slave-03.novalocal
+128.107.15.52   shipped-analytics-hs-central-dcos-slave-04              shipped-analytics-hs-central-dcos-slave-04.novalocal
+128.107.15.53   shipped-analytics-hs-central-dcos-slave-05              shipped-analytics-hs-central-dcos-slave-05.novalocal
+128.107.15.54   shipped-analytics-hs-central-dcos-slave-06              shipped-analytics-hs-central-dcos-slave-06.novalocal
+128.107.15.55   shipped-analytics-hs-central-dcos-slave-07              shipped-analytics-hs-central-dcos-slave-07.novalocal
+

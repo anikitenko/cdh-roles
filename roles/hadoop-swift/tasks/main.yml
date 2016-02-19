@@ -1,0 +1,3 @@
+---
+- name: Copy library
+  copy: src=../files/hadoop-openstack-2.6.0-cdh5.4.4.jar dest=/opt/cloudera/parcels/CDH/lib/hadoop/hadoop-openstack.jar owner=root group=root mode=0644

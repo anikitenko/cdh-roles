@@ -1,0 +1,5 @@
+---
+# tasks file for update-hosts
+- name: Update hosts file
+  copy: src=../files/hosts dest=/etc/hosts owner=root group=root mode=0644
+

@@ -1,0 +1,88 @@
+[base]
+name=CentOS-$releasever - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
+#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+#baseurl=http://mirror.centos.org/centos/6/os/x86_64/
+#baseurl=http://cis-centos-repo.esl.cisco.com/CentOS-6-base
+# The yum fastestmirror plugin should find the closest reachable repo from this list
+# If your network situation changes or yum stops working reasonably,
+# try running "yum clean all" to force re-evaluation.
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/os/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/os/$basearch
+        http://3.cis-centos-repo.esl.cisco.com/CentOS/7/os/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/os/$basearch
+	http://mirror.centos.org/centos/$releasever/os/$basearch
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos7
+enabled=1
+#released updates
+[updates]
+name=CentOS-$releasever - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates
+#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
+#baseurl=http://mirror.centos.org/centos/6/updates/x86_64/
+#baseurl=http://cis-centos-repo.esl.cisco.com/CentOS-6-updates
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/updates/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/updates/$basearch
+        http://3.cis-centos-repo.esl.cisco.com/CentOS/7/updates/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/updates/$basearch
+	http://mirror.centos.org/centos/$releasever/updates/$basearch
+gpgcheck=1
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras
+#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
+#baseurl=http://mirror.centos.org/centos/7/extras/x86_64/
+#baseurl=http://cis-centos-repo.esl.cisco.com/CentOS-6-extras
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/extras/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/extras/$basearch
+        http://3.cis-centos-repo.esl.cisco.com/CentOS/7/extras/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/extras/$basearch
+	http://mirror.centos.org/centos/$releasever/extras/$basearch
+gpgcheck=1
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus
+#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+#baseurl=http://mirror.centos.org/centos/6/centosplus/x86_64/
+#baseurl=http://cis-centos-repo.esl.cisco.com/CentOS-6-centosplus
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/centosplus/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/centosplus/$basearch
+        http://3.cis-centos-repo.esl.cisco.com/CentOS/7/centosplus/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/centosplus/$basearch
+        http://mirror.centos.org/centos/$releasever/centosplus/$basearch
+gpgcheck=1
+enabled=0
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+[fasttrack]
+name=CentOS-$releasever - FastTrack
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/fasttrack/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/fasttrack/$basearch
+        http://3.cis-centos-repo.esl.cisco.com/CentOS/7/fasttrack/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/fasttrack/$basearch
+	http://mirror.centos.org/centos/$releasever/fasttrack/$basearch
+gpgcheck=1
+enabled=0
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+[xen4]
+name=CentOS-$releasever - Xen4
+baseurl=http://1.cis-centos-repo.esl.cisco.com/CentOS/7/xen4/$basearch
+        http://2.cis-centos-repo.esl.cisco.com/CentOS/7/xen4/$basearch
+	http://3.cis-centos-repo.esl.cisco.com/CentOS/7/xen4/$basearch
+        http://centos-repo.telstra.cloud.cisco.com/CentOS/7/xen4/$basearch
+	http://mirror.centos.org/centos/$releasever/xen4/$basearch
+gpgcheck=1
+enabled=0
+#gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-centos6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7

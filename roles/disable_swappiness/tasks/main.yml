@@ -1,0 +1,10 @@
+---
+# tasks file for disable-swappiness
+- name: Lower swappiness for current session
+  command: sysctl -w vm.swappiness=0
+
+- name: Save sysctl settings upon a reboot
+  lineinfile:
+    dest: /etc/sysctl.conf
+    state: present
+    line: vm.swappiness = 0

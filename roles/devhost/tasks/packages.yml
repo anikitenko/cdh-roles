@@ -1,0 +1,29 @@
+---
+- name: install Development Tools
+  sudo: yes
+  yum:
+    name: "@Develpment tools"
+    update_cache: yes
+    state: present
+
+- name: installing other packages
+  sudo: yes
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python-devel
+    - python-pip
+    - ansible
+    - openssh
+    - openconnect
+    - vpnc
+    - java
+    - apache-maven
+
+- name: install openstack
+  sudo: yes
+  pip:
+    name: python-openstackclient
+    state: present
+
